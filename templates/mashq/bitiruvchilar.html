@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitiruvchi_recordlar</title>
+</head>
+<body>
+<h1>Bitiruvchi studentlarning recordlari</h1>
+<br>
+
+    {% for record in bitiruvchilar_r %}
+    <h2>{{record.id}}. {{record}}</h2>
+    {% endfor %}
+
+
+</body>
+</html>

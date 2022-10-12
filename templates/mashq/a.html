@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Studentlar</title>
+</head>
+<body>
+<br>
+<br>
+<h1>A harfi bor studentlar</h1>
+<br>
+
+    {% for student in students %}
+    <h2>{{student.id}}. {{student}}</h2>
+    {% endfor %}
+</body>
+</html>

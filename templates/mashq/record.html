@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Records</title>
+</head>
+<body>
+<br>
+<br>
+<h1>They are list of records</h1>
+<br>
+<br>
+<br>
+<form method="get" action="/record/">
+        <input type="text" name="search">
+        <button type="submit">Qidirish</button>
+    </form>
+<br>
+<br>
+{% for record in records %}
+<h2 style="display:inline;">{{record.id}}. <a href="/record/{{record.id}}/">{{record}} </a></h2>
+<a href="/r_tas/{{record.id}}/"><button>O'chirish</button></a>
+<a href="/r_edit/{{record.id}}/"><button>O'zgartirish</button><br><br><br></a>
+{% endfor %}
+
+    <form method="post" action="/record/">{% csrf_token %}
+        {{forma}}
+        <button type="submit">Qo'shish</button>
+    </form>
+<br>
+<br>
+<br>
+<a href="logout/"><button>Logout</button></a>
+<br>
+<br>
+<br>
+
+</body>
+</html>

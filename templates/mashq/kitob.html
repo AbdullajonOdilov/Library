@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitob</title>
+</head>
+<body>
+    <h1>List of books</h1>
+
+{% for kitob in kitoblar %}
+<h2 style="display:inline;">{{kitob.id}}. <a href="/kitob/{{kitob.id}}/">{{kitob}} </a></h2>
+<a href="/k_tas/{{kitob.id}}/"><button>O'chirish</button><br><br><br></a>
+{% endfor %}
+<form method="post" action="/kitob/">{% csrf_token %}
+
+    {{forma.as_p}}
+
+    <button type="submit">Qo'shish</button>
+</form>
+<br>
+<br>
+<br>
+<a href="logout/"><button>Logout</button></a>
+<br>
+<br>
+<br>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Barcha studentlar ro'yxati</title>
+</head>
+<body>
+<h1>Studentlar royxati</h1>
+<br>
+<br>
+<form method="get" action="/student/">
+        <input type="text" name="q_sozi">
+        <button type="submit">Qidirish</button>
+    </form>
+<br>
+<br>
+{% for student in studentlar %}
+<h2 style="display:inline;">{{student.id}}. <a href="/talaba/{{student.id}}/">{{student}} </a></h2>
+<a href="/t_tas/{{student.id}}/"><button>O'chirish</button></a>
+<a href="/talaba_edit/{{student.id}}/"><button>O'zgartirish</button><br><br><br></a>
+{% endfor %}
+    <form method="post" action="/student/">{% csrf_token %}
+        {{ forma }}
+<!--        {{ forma.i}}-->
+<!--        {{ forma.j}}-->
+<!--        {{ forma.kitoblari_soni}}-->
+<!--        {{ forma.bitiruvchi}}-->
+
+        <button type="submit">Qo'shish</button>
+    </form>
+<br>
+<br>
+</body>
+</html>

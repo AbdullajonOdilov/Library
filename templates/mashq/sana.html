@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Olingan sana</title>
+</head>
+<body>
+<br>
+<br>
+<h1>Recordlarni olingan sanasi bo’yicha eng oxirgi 3 tasi</h1>
+<br>
+
+    {% for record in sana %}
+    <h2>{{record.id}}. {{record}}</h2>
+    {% endfor %}
+
+</body>
+</html>

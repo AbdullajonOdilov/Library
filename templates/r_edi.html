@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Record edit</title>
+</head>
+<body>
+  <br>
+  <br>
+  <h1>Recordning ma'lumotini o'zgartiring</h1>
+  <br>
+  <br>
+  <form method="post" action="/r_edit/{{record.id}}/">{% csrf_token %}
+
+      <label>Olingan sana: </label>
+      <input type="date" name="olsana" value="{{record.olingan_sana}}">
+      <label>Qaytardimi: </label>
+            {% if record.qaytardi %}
+      <input type="checkbox" name="qaytardi" checked>
+        {% else %}
+         <input type="checkbox" name="qaytardi">
+        {% endif %}
+      <label>Qaytargan sana: </label>
+      <input type="date" name="qaysana" value="{{record.qaytargan_sana}}">
+
+        <button type="submit">O'zgartirish</button>
+  </form>
+
+</body>
+</html>
